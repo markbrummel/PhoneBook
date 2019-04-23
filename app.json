@@ -1,0 +1,23 @@
+{
+  "id": "be3fd4a3-71f6-4710-bd38-2a769eaefe51",
+  "name": "Phone Book",
+  "publisher": "Mark Brummel",
+  "brief": "",
+  "description": "",
+  "version": "1.0.20180806.1",
+  "compatibilityId": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "11.0.0.0",
+  "application": "11.0.0.0",
+  "idRange": {
+    "from": 6188600,
+    "to": 6188609
+  }
+}
