@@ -1,7 +1,7 @@
 page 6188600 "Phone Book"
 {
     PageType = List;
-    Caption='Phone Book';
+    Caption = 'Phone Book';
     SourceTable = "Phone Book";
     UsageCategory = Lists;
 
@@ -24,35 +24,38 @@ page 6188600 "Phone Book"
         {
             action(Call)
             {
-                Caption='Call';
-                Image=Calls;
-                Promoted=true;
-                PromotedIsBig=true;
-                PromotedCategory=Process;
+                Caption = 'Call';
+                Image = Calls;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
                 trigger OnAction();
+                var
+                    SoftwareUsageMgt: Codeunit "Software Usage Mgt.";
                 begin
+                    SoftwareUsageMgt.AddActionUsage(6188600, 'CALL');
                     Call;
                 end;
             }
-                        action(MoveUp)
+            action(MoveUp)
             {
-                Caption='Up';
-                Image=MoveUp;
-                Promoted=true;
-                PromotedIsBig=true;
-                PromotedCategory=Process;
+                Caption = 'Up';
+                Image = MoveUp;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
                 trigger OnAction();
                 begin
                     Up;
                 end;
             }
-                        action(MoveDown)
+            action(MoveDown)
             {
-                Caption='Down';
-                Image=MoveDown;
-                Promoted=true;
-                PromotedIsBig=true;
-                PromotedCategory=Process;
+                Caption = 'Down';
+                Image = MoveDown;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
                 trigger OnAction();
                 begin
                     Down;
@@ -61,15 +64,20 @@ page 6188600 "Phone Book"
         }
     }
     trigger OnOpenPage();
+    var
+        SoftwareUsageMgt: Codeunit "Software Usage Mgt.";
     begin
+        SoftwareUsageMgt.AddPageUsage(6188600);
         SetRange("User-ID", UserId);
     end;
+
     procedure Up()
     begin
         "Sequence No." := "Sequence No." - 150;
         Modify;
         Resequence;
     end;
+
     procedure Down()
     begin
         "Sequence No." := "Sequence No." + 150;
