@@ -30,10 +30,7 @@ page 6188600 "Phone Book"
                 PromotedIsBig = true;
                 PromotedCategory = Process;
                 trigger OnAction();
-                var
-                    SoftwareUsageMgt: Codeunit "Software Usage Mgt.";
                 begin
-                    SoftwareUsageMgt.AddActionUsage(6188600, 'CALL');
                     Call;
                 end;
             }
@@ -64,10 +61,7 @@ page 6188600 "Phone Book"
         }
     }
     trigger OnOpenPage();
-    var
-        SoftwareUsageMgt: Codeunit "Software Usage Mgt.";
     begin
-        SoftwareUsageMgt.AddPageUsage(6188600);
         SetRange("User-ID", UserId);
     end;
 
