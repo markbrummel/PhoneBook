@@ -1,4 +1,4 @@
-table 6188600 "Phone Book"
+table 50033 "Phone Book"
 {
     DataPerCompany = false;
     fields
@@ -37,10 +37,8 @@ table 6188600 "Phone Book"
     end;
 
     procedure Call()
-    var
-        Call: Codeunit Call;
     begin
-        Call.Call("Phone No.");
+        HYPERLINK('Callto://' + "Phone No.");
     end;
 
     procedure Resequence()

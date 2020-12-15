@@ -1,4 +1,4 @@
-page 6188600 "Phone Book"
+page 50011 "Phone Book"
 {
     PageType = List;
     Caption = 'Phone Book';
